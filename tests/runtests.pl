@@ -1472,7 +1472,7 @@ sub runhttp2server {
     my $port = 23113;
     for(1 .. 10) {
         $port += int(rand(900));
-        my $aflags .= "--port $port $flags";
+        my $aflags = "--port $port $flags";
 
         my $cmd = "$exe $aflags";
         ($http2pid, $pid2) = startnew($cmd, $pidfile, 15, 0);
